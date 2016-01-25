@@ -1,7 +1,7 @@
 # Site settings
 title: Wxk Blog
 SEOTitle: 王鑫楷的博客 | wang Blog
-header-img: i8.tietuku.com/9d800c915d07de36.jpg
+header-img: <img src="http://i8.tietuku.com/9d800c915d07de36.jpg">
 email: luxuntec@163.com
 description: "从新的起点出发，保持谦卑的心"
 keyword: "王鑫凯,王鑫楷,隔壁老王,王老师,美,技术博客"
