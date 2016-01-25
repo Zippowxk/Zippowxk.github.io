@@ -1,6 +1,15 @@
 ---
 layout: post
-title: Designer, Architect, Developer
+title: Tinker Blog            
+SEOTitle: Hux Blog         
+description: "Cool Blog"    
+
+# SNS settings      
+github_username: huxpro     
+weibo_username: huxpro     
+
+# Build settings
+# paginate: 10              # 一页你准备放几篇文章
 ---
 
 {{ page.title }}
