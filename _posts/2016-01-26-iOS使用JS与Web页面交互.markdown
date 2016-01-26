@@ -1,13 +1,14 @@
 ---
 layout:     post
-title:      "iOS使用JS与Web页面交互”
-subtitle:   "\"Make a Bridge Between WebPages and Native App\""
-date:       2016-1-26 12:00:00
+title:      "Hello 2016"
+subtitle:   " \"Hello World, Hello My Own Blog\""
+date:       2016-1-25 12:00:00
 author:     "Wxk"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/2016-1-26.png"
 tags:
-	- iOS技能点
+    - 开始
 ---
+
 
 ### 目录：
 1. [简单的跳转操作实现][1]
