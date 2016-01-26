@@ -1,14 +1,16 @@
 ---
 layout:     post
-title:      "Hello 2016"
-subtitle:   " \"Hello World, Hello My Own Blog\""
-date:       2016-1-25 12:00:00
+title:      "iOS使用JS与Web页面交互”
+subtitle:   " \”Make a Bridge Between WebPages and Native App\””
+date:       2016-1-26 12:00:00
 author:     "Wxk"
-header-img: "img/2016-1-26.png"
+header-img: "img/post-bg-2015.jpg"
 tags:
-    - 开始
+	- iOS技能点
+	- JS交互
+	- 网易新闻的实现
+	
 ---
-
 
 ### 目录：
 1. [简单的跳转操作实现][1]
@@ -17,6 +19,8 @@ tags:
 
 
 <p id = "simple"></p>
+
+---
 ### 简单实现详解
 当你的项目中有这样一种需求： 1.从native程序中跳转到web网页（比如微信公众账号） 2.从web网页中跳转到某些native的程序页面中，想满足这样的操作其实非常之简单，只需要你学会使用UIWebView中的代理方法：
 
@@ -30,15 +34,4 @@ tags:
 [2]:	#complicate
 [3]:	http://www.jianshu.com/p/d83b824d8b24
 
----
-layout:     post
-title:      "iOS使用JS与Web页面交互”
-subtitle:   " \”Make a Bridge Between WebPages and Native App\””
-date:       2016-1-26 12:00:00
-author:     "Wxk"
-header-img: "img/post-bg-2015.jpg"
-tags:
-	- iOS技能点
-	- JS交互
-	- 网易新闻的实现
 ---
