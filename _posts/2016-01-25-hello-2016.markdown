@@ -4,7 +4,7 @@ title:      "Hello 2016"
 subtitle:   " \"Hello World, Hello My Own Blog\""
 date:       2016-1-25 12:00:00
 author:     "Wxk"
-header-img: "img/2016-1-26.png"
+header-img: "img/post-bg-2015.jpg"
 tags:
     - 开始
 ---
