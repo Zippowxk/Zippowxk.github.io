@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "iOS使用JS与Web页面交互”
-subtitle:   " \”Make a Bridge Between WebPages and Native App\””
+subtitle:   "\"Make a Bridge Between WebPages and Native App\""
 date:       2016-1-26 12:00:00
 author:     "Wxk"
 header-img: "img/post-bg-2015.jpg"
