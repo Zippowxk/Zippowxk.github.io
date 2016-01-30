@@ -7,8 +7,6 @@ author:     "Wxk"
 header-img: "img/2016-1-26.png"
 tags:
 	- iOS技能
-	- JavaScript交互
-	- 网易新闻
 ---
 
 
