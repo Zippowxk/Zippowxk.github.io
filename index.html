@@ -13,6 +13,12 @@ description: "生来极致"
         <h3 class="post-subtitle">
             {{ post.subtitle }}
         </h3>
+        { % if post.content contains "<!-- more -->" %}
+        { { post.content | split:"<!-- more -->" | first % }}
+        <h4><a href='{ {post.url}}' title='Read more...'>Read more...</a></h4>
+        { % else %}
+        { { post.content}}
+        { % endif %}
         {% endif %}
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
@@ -21,10 +27,7 @@ description: "生来极致"
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
-    <span class="post-date">{{ post,date | date_to_string }}</span>
-    {{ post.content ||split:'<!-- more -->' | first }}
-    <h7><a href='{{post.url}}' title='阅读全文'>阅读全文</a></h7>
-    
+
 </div>
 <hr>
 {% endfor %}
