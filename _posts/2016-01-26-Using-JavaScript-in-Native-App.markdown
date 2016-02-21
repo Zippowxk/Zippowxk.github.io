@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Using JavaScript in Native App"
-subtitle:   " "Make A Bridge Between Web Pages and Native App""
+subtitle:   " \"Make A Bridge Between Web Pages and Native App\""
 date:       2016-1-25 12:00:00
 author:     "Wxk"
 header-img: "img/2016-1-26.png"
