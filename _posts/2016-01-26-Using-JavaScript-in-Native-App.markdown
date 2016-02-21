@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      "Network On IOS"
-subtitle:   " \"Using Socket On iOS\""
-date:       2016-2-21 21:33:00
+title:      "Using JavaScript in Native App"
+subtitle:   " "Make A Bridge Between Web Pages and Native App""
+date:       2016-1-25 12:00:00
 author:     "Wxk"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/2016-1-26.png"
 tags:
-    - 网络
+	- iOS技能
 ---
 
 #网络编程
