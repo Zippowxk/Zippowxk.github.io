@@ -91,6 +91,8 @@ tags:
 
 ### 二、Socket(套接字)通信
 
+<!-- more -->
+
 网络进程间通信在传输层中，基本上都是用的Socket，Cocoa中使用Socket有三种方式：
 
 * Cocoa层：NSURL
