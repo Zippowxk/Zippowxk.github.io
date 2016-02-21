@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      "Using JavaScript in Native App"
-subtitle:   " \"Make A Bridge Between Web Pages and Native App\""
+title:      "Hello 2016"
+subtitle:   " \"Hello World, Hello My Own Blog\""
 date:       2016-1-25 12:00:00
 author:     "Wxk"
-header-img: "img/2016-1-26.png"
+header-img: "img/post-bg-2015.jpg"
 tags:
-	- iOS技能
+    - 开始
 ---
 
 ##网络编程
