@@ -4,7 +4,7 @@ title:      "PeriodicAdStands"
 subtitle:   " \"创造完美的广告轮播页\""
 date:       2016-4-28 12:00:00
 author:     "Wxk"
-header-img: "20150611012625286.jpg"
+header-img: "img/20150611012625286.jpg"
 tags:
     - UI设计
 ---
