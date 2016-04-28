@@ -143,5 +143,5 @@ Hades君不要介意啦
 4. 开始监听时使用<br>`- (void)performSelector:(SEL)aSelector withObject:(nullable id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray<NSString *> *)modes;` <br>在5秒以后播放下一帧，当不足5秒就退出休眠时使用 <br>`+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(nullable id)anArgument;`取消之前的操作。
 
 
-更多的源代码请查看Github 或者 Code4App
+更多的源代码请查看[Github](https://github.com/Zippowxk/AdLooper)
 
