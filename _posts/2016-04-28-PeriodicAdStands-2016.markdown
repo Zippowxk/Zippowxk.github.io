@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Hello 2016"
+title:      "PeriodicAdStands"
 subtitle:   " \"创造完美的广告轮播页\""
 date:       2016-4-28 12:00:00
 author:     "Wxk"
