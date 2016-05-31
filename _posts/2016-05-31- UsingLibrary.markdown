@@ -20,7 +20,7 @@ tags:
 动态库和静态库的区别主要在于重复利用率，静态库在不同的应用中被使用，会重复被copy，比如你的大众点评客户端和美团外卖客户端都用了微信支付，如果都用的静态库，那么每个静态库都会被加载到内存中，但是如果使用了动态库，那么就会加载同一个。就像UIKit在系统中只有一个一样，不需要重复加载。
 我们本期不讨论动态库，先学习一下静态库---Library
 
-##一、认识library
+## 一、认识library
 
 
 ### 1.1 静态库构成
@@ -46,22 +46,22 @@ tags:
 4. 一般静态库在制作时会有两种，真机版本和模拟器版本，主要是因为两者支持的cpu不同。所以也要注意。我们后面会补充如何通过命令合并两者。
 5. 其他坑等待各位客官在评论区补充吧
 
-##二、为什么使用静态库
+## 二、为什么使用静态库
 
-###2.1 安全性
+### 2.1 安全性
 其实使用静态库的目的就一个，那就是保密。我们不希望第三方看到我们的某些机密数据，但是还需要开放给第三方使用我们提供的某些服务，这是否就需要静态库来解决这种问题。比如我们常见的微信SDK，支付宝SDK，高德地图SDK等等。因为源代码已经被编译成了.a文件，那么想获得源码只能通过反编译。关于静态库反编译的问题我还没有研究过，等大家补充。
 
 
-###2.2 通用性
+### 2.2 通用性
 
 不需要针对某用户单独制作，所有第三方开发者通用。
 
-###2.3 可传递
+### 2.3 可传递
 
 文件结构简单，很方便就可以传输。比如pods就很方便的可以管理很多第三方库。
 
 
-##三、制作静态库
+## 三、制作静态库
 
 因为目前网上有太多的制作教程了。我这里不同的是：
 
@@ -83,25 +83,25 @@ tags:
 然后我怒抽1包烟，操作了两把Dota。决定先写一个Demo测试一下我的疑问，然后果断新建一个工程来做。
 下面介绍步骤：
 
-###编译.a文件 Step1-7
-###Step1 新建工程
+### 编译.a文件 Step1-7
+### Step1 新建工程
 
 [![2016-05-31_23-21-39.md.png](http://imgchr.com/images/2016-05-31_23-21-39.md.png)](http://imgchr.com/image/PT9)
 <p>这一步没有什么好注意的<p>
 
 
-###Step2 删掉默认文件
+### Step2 删掉默认文件
 
 [![2016-05-31_23-26-25.md.png](http://imgchr.com/images/2016-05-31_23-26-25.md.png)](http://imgchr.com/image/PTB)
 
-###Step3 创建一个带有Xib文件的ViewController
+### Step3 创建一个带有Xib文件的ViewController
 
 [![2016-05-31_23-28-08.md.png](http://imgchr.com/images/2016-05-31_23-28-08.md.png)](http://imgchr.com/image/PTS)
 
 在xib上添加一个UIImageView，并且添加一张图片并设置好。<br>
 [![2016-05-31_23-48-29.md.png](http://imgchr.com/images/2016-05-31_23-48-29.md.png)](http://imgchr.com/image/PTR)
 
-###Step4 创建一个不带有Xib文件的RootViewController
+### Step4 创建一个不带有Xib文件的RootViewController
 
 在viewDidLoad里添加如下代码
 
@@ -125,12 +125,12 @@ tags:
 	    });
 	}
 
-###Step5 设置暴露的头文件
+### Step5 设置暴露的头文件
 [![2016-06-01_00-04-02.md.png](http://imgchr.com/images/2016-06-01_00-04-02.md.png)](http://imgchr.com/image/PTg)
 
 当然暴露的不一定非得是头文件，执行文件也可以暴露给第三方。
 
-###Step6 Run并获得静态库
+### Step6 Run并获得静态库
 [![2016-06-01_00-08-47.md.png](http://imgchr.com/images/2016-06-01_00-08-47.md.png)](http://imgchr.com/image/PT4)
 <br>注意这里，如果选择真机，编译出来的就是真机版本的静态库，选择模拟器对应的就是模拟器版本的静态库。我们两个分别都Run一次。然后在build目录下就可以找到两个静态库了。在window-projects中找build目录。<br>
 [![2016-06-01_00-13-13.md.png](http://imgchr.com/images/2016-06-01_00-13-13.md.png)](http://imgchr.com/image/PTD)
@@ -140,7 +140,7 @@ tags:
 
 合并两种版本的方法 `lipo -create -output` 命令，很简单的命令,请看这里[命令详解](http://blog.csdn.net/cuiweijie3/article/details/8671240)。
 
-###Step7 测试静态库
+### Step7 测试静态库
 
 这一步就不上图了，直接说结果：
 
@@ -149,24 +149,24 @@ tags:
 3. `测试xib中能否直接使用图片`测试失败，以为xib文件本身就没有被编译进来。
 
 
-###编译bundle文件 Step8-10
+### 编译bundle文件 Step8-10
 
-###Step8 添加Target
+### Step8 添加Target
 [![2016-06-01_00-31-31.md.png](http://imgchr.com/images/2016-06-01_00-31-31.md.png)](http://imgchr.com/image/PTt)
 
 这里需要创建OS X的bundle，然后修改成iOS版的，怎么修改？看下图：<br>
 
 [![2016-06-01_00-33-45.md.png](http://imgchr.com/images/2016-06-01_00-33-45.md.png)](http://imgchr.com/image/PTE)
 
-###Step9 给Bundle添加包含的文件
+### Step9 给Bundle添加包含的文件
 [![2016-06-01_00-35-45.md.png](http://imgchr.com/images/2016-06-01_00-35-45.md.png)](http://imgchr.com/image/PTO)
 
 
-###Step10 Run并且获得.bundle文件
+### Step10 Run并且获得.bundle文件
 [![2016-06-01_00-39-34.md.png](http://imgchr.com/images/2016-06-01_00-39-34.md.png)](http://imgchr.com/image/PTa)
 <br>注意run的时候一定要选好target，否则你还是执行的静态库文件的target哟。这个应该是不区分真机和模拟器。
 
-###Step11 修改imageNamed功能
+### Step11 修改imageNamed功能
 
 
 
@@ -205,7 +205,7 @@ tags:
 	@end
 
 
-###Step12 加载Xib功能
+### Step12 加载Xib功能
 
 
 给TestViewController添加如下方法：
@@ -239,11 +239,11 @@ tags:
 1. xib编译后后缀会变为.nib
 2. 为了可以减少代码量和方便修改，最好有一个父类BaseViewController，统一修改init方法，会更加简单。
 
-###Step13 测试静态库+bundle
+### Step13 测试静态库+bundle
 
 当然是成功了~
 
-##四、制作我的工程SDK
+## 四、制作我的工程SDK
 
 有了上面的测试，事情简单多了，我首先还测试了静态库能否包含静态库，发现可以。但是不可以包含动态库。原因大概是静态库和动态库的加载逻辑不通，静态库程序一打开就要编译链接进去。动态库只有在运行时才会被掉起。所以不会相互包含。 所以支付宝最新的SDK只能作为依赖库使用。
 
