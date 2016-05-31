@@ -86,12 +86,12 @@ tags:
 ### 编译.a文件 Step1-7
 
 ### Step1 新建工程
-<br>
+
 [![2016-05-31_23-21-39.md.png](http://imgchr.com/images/2016-05-31_23-21-39.md.png)](http://imgchr.com/image/PT9)
-<p>这一步没有什么好注意的<p>
-<br>
+这一步没有什么好注意的
 
 ### Step2 删掉默认文件
+
 <br>
 [![2016-05-31_23-26-25.md.png](http://imgchr.com/images/2016-05-31_23-26-25.md.png)](http://imgchr.com/image/PTB)
 <br>
