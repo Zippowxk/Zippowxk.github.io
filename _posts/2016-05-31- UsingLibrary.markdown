@@ -95,6 +95,7 @@ tags:
 <br>
 [![2016-05-31_23-26-25.md.png](http://imgchr.com/images/2016-05-31_23-26-25.md.png)](http://imgchr.com/image/PTB)
 <br>
+
 ### Step3 创建一个带有Xib文件的ViewController
 <br>
 [![2016-05-31_23-28-08.md.png](http://imgchr.com/images/2016-05-31_23-28-08.md.png)](http://imgchr.com/image/PTS)
@@ -102,8 +103,9 @@ tags:
 在xib上添加一个UIImageView，并且添加一张图片并设置好。<br>
 [![2016-05-31_23-48-29.md.png](http://imgchr.com/images/2016-05-31_23-48-29.md.png)](http://imgchr.com/image/PTR)
 <br>
-### Step4 创建一个不带有Xib文件的RootViewController
 
+### Step4 创建一个不带有Xib文件的RootViewController
+<br>
 在viewDidLoad里添加如下代码
 
 	- (void)viewDidLoad {
