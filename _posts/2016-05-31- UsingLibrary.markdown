@@ -97,6 +97,7 @@ tags:
 <br>
 
 ### Step3 创建一个带有Xib文件的ViewController
+
 <br>
 [![2016-05-31_23-28-08.md.png](http://imgchr.com/images/2016-05-31_23-28-08.md.png)](http://imgchr.com/image/PTS)
 <br>
@@ -105,6 +106,7 @@ tags:
 <br>
 
 ### Step4 创建一个不带有Xib文件的RootViewController
+
 <br>
 在viewDidLoad里添加如下代码
 
@@ -127,13 +129,18 @@ tags:
 	
 	    });
 	}
+	
 
 ### Step5 设置暴露的头文件
+
+
 [![2016-06-01_00-04-02.md.png](http://imgchr.com/images/2016-06-01_00-04-02.md.png)](http://imgchr.com/image/PTg)
 
 当然暴露的不一定非得是头文件，执行文件也可以暴露给第三方。
 
 ### Step6 Run并获得静态库
+
+
 [![2016-06-01_00-08-47.md.png](http://imgchr.com/images/2016-06-01_00-08-47.md.png)](http://imgchr.com/image/PT4)
 <br>注意这里，如果选择真机，编译出来的就是真机版本的静态库，选择模拟器对应的就是模拟器版本的静态库。我们两个分别都Run一次。然后在build目录下就可以找到两个静态库了。在window-projects中找build目录。<br>
 [![2016-06-01_00-13-13.md.png](http://imgchr.com/images/2016-06-01_00-13-13.md.png)](http://imgchr.com/image/PTD)
@@ -142,6 +149,8 @@ tags:
 <p>然后你会在这里看到两个文件目录， __Debug-iphoneos__ 就是真机版本， __Debug-iphonesimulator__ 就是模拟器版本。<p>
 
 合并两种版本的方法 `lipo -create -output` 命令，很简单的命令,请看这里[命令详解](http://blog.csdn.net/cuiweijie3/article/details/8671240)。
+
+
 
 ### Step7 测试静态库
 
@@ -154,7 +163,10 @@ tags:
 
 ### 编译bundle文件 Step8-10
 
+
 ### Step8 添加Target
+
+
 [![2016-06-01_00-31-31.md.png](http://imgchr.com/images/2016-06-01_00-31-31.md.png)](http://imgchr.com/image/PTt)
 
 这里需要创建OS X的bundle，然后修改成iOS版的，怎么修改？看下图：<br>
@@ -162,12 +174,17 @@ tags:
 [![2016-06-01_00-33-45.md.png](http://imgchr.com/images/2016-06-01_00-33-45.md.png)](http://imgchr.com/image/PTE)
 
 ### Step9 给Bundle添加包含的文件
+
+
 [![2016-06-01_00-35-45.md.png](http://imgchr.com/images/2016-06-01_00-35-45.md.png)](http://imgchr.com/image/PTO)
 
 
 ### Step10 Run并且获得.bundle文件
+
+
 [![2016-06-01_00-39-34.md.png](http://imgchr.com/images/2016-06-01_00-39-34.md.png)](http://imgchr.com/image/PTa)
 <br>注意run的时候一定要选好target，否则你还是执行的静态库文件的target哟。这个应该是不区分真机和模拟器。
+
 
 ### Step11 修改imageNamed功能
 
@@ -208,6 +225,7 @@ tags:
 	@end
 
 
+
 ### Step12 加载Xib功能
 
 
@@ -242,9 +260,11 @@ tags:
 1. xib编译后后缀会变为.nib
 2. 为了可以减少代码量和方便修改，最好有一个父类BaseViewController，统一修改init方法，会更加简单。
 
+
 ### Step13 测试静态库+bundle
 
 当然是成功了~
+
 
 ## 四、制作我的工程SDK
 
