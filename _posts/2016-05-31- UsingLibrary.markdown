@@ -83,24 +83,25 @@ tags:
 然后我怒抽1包烟，操作了两把Dota。决定先写一个Demo测试一下我的疑问，然后果断新建一个工程来做。
 下面介绍步骤：
 
-###<p>编译.a文件 Step1-7<p>
-###<p>Step1 新建工程<p>
+###编译.a文件 Step1-7
+###Step1 新建工程
+
 [![2016-05-31_23-21-39.md.png](http://imgchr.com/images/2016-05-31_23-21-39.md.png)](http://imgchr.com/image/PT9)
 <p>这一步没有什么好注意的<p>
 
 
-###<p>Step2 删掉默认文件<p>
+###Step2 删掉默认文件
 
 [![2016-05-31_23-26-25.md.png](http://imgchr.com/images/2016-05-31_23-26-25.md.png)](http://imgchr.com/image/PTB)
 
-###<p>Step3 创建一个带有Xib文件的ViewController<p>
+###Step3 创建一个带有Xib文件的ViewController
 
 [![2016-05-31_23-28-08.md.png](http://imgchr.com/images/2016-05-31_23-28-08.md.png)](http://imgchr.com/image/PTS)
 
 在xib上添加一个UIImageView，并且添加一张图片并设置好。<br>
 [![2016-05-31_23-48-29.md.png](http://imgchr.com/images/2016-05-31_23-48-29.md.png)](http://imgchr.com/image/PTR)
 
-###<p>Step4 创建一个不带有Xib文件的RootViewController<p>
+###Step4 创建一个不带有Xib文件的RootViewController
 
 在viewDidLoad里添加如下代码
 
@@ -124,12 +125,12 @@ tags:
 	    });
 	}
 
-###<p>Step5 设置暴露的头文件<p>
+###Step5 设置暴露的头文件
 [![2016-06-01_00-04-02.md.png](http://imgchr.com/images/2016-06-01_00-04-02.md.png)](http://imgchr.com/image/PTg)
 
 当然暴露的不一定非得是头文件，执行文件也可以暴露给第三方。
 
-###<p>Step6 Run并获得静态库<p>
+###Step6 Run并获得静态库
 [![2016-06-01_00-08-47.md.png](http://imgchr.com/images/2016-06-01_00-08-47.md.png)](http://imgchr.com/image/PT4)
 <br>注意这里，如果选择真机，编译出来的就是真机版本的静态库，选择模拟器对应的就是模拟器版本的静态库。我们两个分别都Run一次。然后在build目录下就可以找到两个静态库了。在window-projects中找build目录。<br>
 [![2016-06-01_00-13-13.md.png](http://imgchr.com/images/2016-06-01_00-13-13.md.png)](http://imgchr.com/image/PTD)
@@ -139,7 +140,7 @@ tags:
 
 合并两种版本的方法 `lipo -create -output` 命令，很简单的命令,请看这里[命令详解](http://blog.csdn.net/cuiweijie3/article/details/8671240)。
 
-###<p>Step7 测试静态库<p>
+###Step7 测试静态库
 
 这一步就不上图了，直接说结果：
 
@@ -148,24 +149,24 @@ tags:
 3. `测试xib中能否直接使用图片`测试失败，以为xib文件本身就没有被编译进来。
 
 
-###<p>编译bundle文件 Step8-10<p>
+###编译bundle文件 Step8-10
 
-###<p>Step8 添加Target<p>
+###Step8 添加Target
 [![2016-06-01_00-31-31.md.png](http://imgchr.com/images/2016-06-01_00-31-31.md.png)](http://imgchr.com/image/PTt)
 
 这里需要创建OS X的bundle，然后修改成iOS版的，怎么修改？看下图：<br>
 
 [![2016-06-01_00-33-45.md.png](http://imgchr.com/images/2016-06-01_00-33-45.md.png)](http://imgchr.com/image/PTE)
 
-###<p>Step9 给Bundle添加包含的文件<p>
+###Step9 给Bundle添加包含的文件
 [![2016-06-01_00-35-45.md.png](http://imgchr.com/images/2016-06-01_00-35-45.md.png)](http://imgchr.com/image/PTO)
 
 
-###<p>Step10 Run并且获得.bundle文件<p>
+###Step10 Run并且获得.bundle文件
 [![2016-06-01_00-39-34.md.png](http://imgchr.com/images/2016-06-01_00-39-34.md.png)](http://imgchr.com/image/PTa)
 <br>注意run的时候一定要选好target，否则你还是执行的静态库文件的target哟。这个应该是不区分真机和模拟器。
 
-###<p>Step11 修改imageNamed功能<p>
+###Step11 修改imageNamed功能
 
 
 
@@ -204,7 +205,7 @@ tags:
 	@end
 
 
-###<p>Step12 加载Xib功能<p>
+###Step12 加载Xib功能
 
 
 给TestViewController添加如下方法：
@@ -238,7 +239,7 @@ tags:
 1. xib编译后后缀会变为.nib
 2. 为了可以减少代码量和方便修改，最好有一个父类BaseViewController，统一修改init方法，会更加简单。
 
-###<p>Step13 测试静态库+bundle<p>
+###Step13 测试静态库+bundle
 
 当然是成功了~
 
