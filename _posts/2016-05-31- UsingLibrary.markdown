@@ -146,7 +146,7 @@ tags:
 [![2016-06-01_00-13-13.md.png](http://imgchr.com/images/2016-06-01_00-13-13.md.png)](http://imgchr.com/image/PTD)
 <br>
 [![2016-06-01_00-16-04.md.png](http://imgchr.com/images/2016-06-01_00-16-04.md.png)](http://imgchr.com/image/PTK)
-<p>然后你会在这里看到两个文件目录， __Debug-iphoneos__ 就是真机版本， __Debug-iphonesimulator__ 就是模拟器版本。<p>
+然后你会在这里看到两个文件目录， __Debug-iphoneos__ 就是真机版本， __Debug-iphonesimulator__ 就是模拟器版本。<br>
 
 合并两种版本的方法 `lipo -create -output` 命令，很简单的命令,请看这里[命令详解](http://blog.csdn.net/cuiweijie3/article/details/8671240)。
 
