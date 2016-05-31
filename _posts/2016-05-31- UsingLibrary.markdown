@@ -84,23 +84,24 @@ tags:
 下面介绍步骤：
 
 ### 编译.a文件 Step1-7
-### Step1 新建工程
 
+### Step1 新建工程
+<br>
 [![2016-05-31_23-21-39.md.png](http://imgchr.com/images/2016-05-31_23-21-39.md.png)](http://imgchr.com/image/PT9)
 <p>这一步没有什么好注意的<p>
-
+<br>
 
 ### Step2 删掉默认文件
-
+<br>
 [![2016-05-31_23-26-25.md.png](http://imgchr.com/images/2016-05-31_23-26-25.md.png)](http://imgchr.com/image/PTB)
-
+<br>
 ### Step3 创建一个带有Xib文件的ViewController
-
+<br>
 [![2016-05-31_23-28-08.md.png](http://imgchr.com/images/2016-05-31_23-28-08.md.png)](http://imgchr.com/image/PTS)
-
+<br>
 在xib上添加一个UIImageView，并且添加一张图片并设置好。<br>
 [![2016-05-31_23-48-29.md.png](http://imgchr.com/images/2016-05-31_23-48-29.md.png)](http://imgchr.com/image/PTR)
-
+<br>
 ### Step4 创建一个不带有Xib文件的RootViewController
 
 在viewDidLoad里添加如下代码
