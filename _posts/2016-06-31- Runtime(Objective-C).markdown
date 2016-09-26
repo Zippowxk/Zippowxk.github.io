@@ -19,7 +19,7 @@ tags:
 Runtime提供了引言中问题的解决方案。它是OC语言的一个核心机制，使OC具有了面向对象的特征，实现了把函数转换为方法的机制等等。本节结束后，你会对OC的机制有更加深刻的理解，比如我们熟知的self隐藏参数是在哪定义的等等。
 
 
-###什么是Runtime
+### 什么是Runtime
 
 Runtime是一个纯C语言的库，其中定义了非常多的结构体和函数，通过这些结构体和函数，实现了我们平时使用的OC语言的基本机制。Runtime保证了我们平时觉得习以为常的东西能够正常运作。Runtime是使OC变为动态语言的核心。
 
@@ -30,7 +30,7 @@ Runtime存放在usr/include/objc/目录下，usr文件系统包含所有的命�
 	#import <objc/runtime.h>
 
 
-###NSObject 
+### NSObject 
 当我们在使用OC编写代码，我们都知道所有的类都继承于NSObject（其实还有一个NSProxy），我们都知道NSObject是一个根类，那么问题来了。NSObject是怎么来的？
 
 想探明究竟很简单，我们跳转到头文件中：
@@ -85,7 +85,7 @@ Class很明显就是一个结构体，那么这个结构体里都是一些什么
 
 
 
-###Class是什么
+### Class是什么
 
 我们平时说的类，其实就是这里的Class，实现了一个类应该有的功能。
 
@@ -148,7 +148,7 @@ Class结构体中的变量具体作用如下：
 
 类本身也有一个isa指针，那么它指向哪里呢？请看下文。
 
-###MetaClass元类
+### MetaClass元类
 
 类的isa指针也指向一个类，我们称之为元类。
 
@@ -174,11 +174,11 @@ Class结构体中的变量具体作用如下：
 
 以上内容，让我们了解了类是如何保存，如何继承的。结构体中的成员我们都无法直接修改，如果想要修改，就一定要通过系统提供给我们的函数， 那么有哪些常用的函数呢？请看下文。
 
-###消息机制
+### 消息机制
 
 目前为止还有一个问题没有解释，C中是没有方法的，只有函数，那么OC中的方法是怎么来的，怎么实现调用的？
 
-####方法调用
+#### 方法调用
 
 首先看方法是如何调用的，很多书中，或者很多人都会说发送消息，什么叫做发送消息呢？其实就是给调用方法的对象发送一条消息，发送这条消息的参数很简单，一个就是消息接受者，一个就是你要调用的方法名。
 
@@ -234,7 +234,7 @@ Class结构体中的变量具体作用如下：
 [详情](https://developer.apple.com/library/ios/documentation/General/Conceptual/CocoaTouch64BitGuide/ConvertingYourAppto64-Bit/ConvertingYourAppto64-Bit.html)
 
 
-####SEL是什么
+#### SEL是什么
 上文中我们使用：
 
 	SEL sel = sel_registerName("alloc");
@@ -247,7 +247,7 @@ struct objc_method_description {
 
 那么方法是如何与函数互相绑定的呢？
 
-####动态地为一个类添加方法
+#### 动态地为一个类添加方法
 	
 	childClass = [CNChild class];
     class_addMethod(childClass, @selector(methodName), (IMP)impFunction,nil);
@@ -264,7 +264,7 @@ struct objc_method_description {
 
 那么IMP是什么呢？
 
-####IMP
+#### IMP
 
 IMP就implementation的缩写，IMP的定义如下，其实就是一个函数类型：
 
@@ -282,7 +282,7 @@ IMP就implementation的缩写，IMP的定义如下，其实就是一个函数类
 
 
 
-###重要结构体
+### 重要结构体
 
 #### 1.协议列表：
 
@@ -353,7 +353,7 @@ IMP就implementation的缩写，IMP的定义如下，其实就是一个函数类
 	    Method buckets[1]                                        OBJC2_UNAVAILABLE;
 	};
 
-###重要函数
+### 重要函数
 
 下面的函数的使用可以在需要是查阅
 
@@ -420,7 +420,7 @@ IMP就implementation的缩写，IMP的定义如下，其实就是一个函数类
    
 更多函数请参考文件中的注释内容
 
-###常用方法总结
+### 常用方法总结
 
 #### 新的BaseModel
 
