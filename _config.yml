@@ -61,7 +61,7 @@ ga_domain: zippowxk.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，教教课，读读书，听听音乐，享受小仔、家人的爱"
+sidebar-about-description: "写写代码，看看书，琢磨产品，研究吃"
 sidebar-avatar: /img/avatar-wxk.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
