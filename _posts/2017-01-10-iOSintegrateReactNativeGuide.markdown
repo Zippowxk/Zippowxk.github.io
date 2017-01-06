@@ -2,7 +2,7 @@
 layout:     post
 title:      "iOS Integrate React Native Guide"
 subtitle:   " \"如何导入react-native到iOS\""
-date:       2017-1-06 12:00:00
+date:       2017-1-10 12:00:00
 author:     "Wxk"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
