@@ -5,7 +5,7 @@ title:      "iOS integrate React-Native Guide"
 subtitle:   " \"如何导入react-native到iOS\""
 date:       2017-1-6 12:00:00
 author:     "Wxk"
-header-img: "img/post-bg-2017.jpg"
+header-img: "img/post-bg-2017.JPG"
 tags:
 
     - React-Native
