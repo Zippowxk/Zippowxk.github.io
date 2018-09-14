@@ -61,7 +61,7 @@ ga_domain: zippowxk.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，看看书，琢磨产品，研究吃"
+sidebar-about-description: "无愧自己"
 sidebar-avatar: /img/avatar-wxk.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -77,23 +77,5 @@ friends: [
     {
         title: "赵云贺的博客",
         href: "http://zhaoyunhe.com"
-    },{
-        title: "Luke的自留地",
-        href: "http://hmqk1995.github.io"
-    },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
-    },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
     }
 ]

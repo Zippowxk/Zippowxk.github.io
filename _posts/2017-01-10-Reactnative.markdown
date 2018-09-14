@@ -6,10 +6,13 @@ date:       2017-1-10 12:00:00
 author:     "Wxk"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
+
     - React-Native
 ---
 
->17年的技术方向主要放在 ReactNative，技术栈虽然比较高，但是语言难度比较小，从中领会一些编程思想，会映射到iOS方向上。下面是最近编写的一片指导，没修改直接po上来了。
+
+
+>17年的技术方向主要放在 ReactNative，技术栈虽然比较高，但是语言难度比较小，从中领会一些编程思想，会映射到iOS方向上。下面是最近编写的指导，没修改直接po上来了。
 
 ## 前提
 - 硬件：Mac 良好网络环境 
@@ -34,14 +37,14 @@ Node 使用Homebrew来安装[Node.js](https://nodejs.org/).
 > React Native目前需要NodeJS 5.0或更高版本。本文发布时Homebrew默认安装的是最新版本，一般都满足要求。 
 
 	brew install node
-	
+
 安装完node后建议设置npm镜像以加速后面的过程（或使用科学上网工具,推荐Shadowsocks）。 
 
 	npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global
-	
+
 #### 1.4 安装Yarn、React Native的命令行工具（react-native-cli）
  [Yarn](http://yarnpkg.com)是Facebook提供的替代npm的工具，可以加速node模块的下载。React Native的命令行工具用于执行创建、初始化、更新项目、运行打包服务（packager）等任务。
- 
+
  	npm install -g yarn react-native-cli 
  	
 如果你看到`EACCES: permission denied`这样的权限报错，那么请参照上文的homebrew译注，修复`/usr/local`目录的所有权： ```bash sudo chown -R `whoami` /usr/local ``` 	
@@ -53,7 +56,7 @@ __Watchman__
 [Watchman](https://facebook.github.io/watchman/docs/install.html)是由Facebook提供的监视文件系统变更的工具。安装此工具可以提高开发时的性能（packager可以快速捕捉文件的变化从而实现实时刷新）。 
 	
 	brew install watchman
-	
+
 #### 1.6 测试使用
 
 先```cd```到你要存放工程的目录，并使用命令
@@ -61,7 +64,7 @@ __Watchman__
 	react-native init AwesomeProject 
 	cd AwesomeProject
 	react-native run-ios
-	
+
 或者执行命令```react-native init AwesomeProject```后，在Xcode中使用<kbd>Command+R</kbd>编译并执行创建好的```AwesomeProject ```工程。正确结果应该是```模拟器```跑起来，```终端```会弹出Package监听信息窗口
 		
 ### 2.将```javascript```包嵌入原生工程
@@ -96,7 +99,7 @@ __Watchman__
 使用npm（node包管理器，Node package manager）来安装React和React Native模块。这些模块会被安装到项目根目录下的`node_modules/`目录中。 在包含有package.json文件的目录（一般也就是项目根目录）中运行下列命令来安装： 
 
 	npm install 
-	
+
 #### 2.5 React-Native框架	
 
 为了更简单的集成复杂的RN依赖库到Xcode工程中，强烈建议使用```Cocoapods```
@@ -105,13 +108,13 @@ __Watchman__
 使用命令安装Cocoapods
 
 	sudo gem install cocoapods
-	
+
 ##### 2.5.2 配置Podfile
 
 使用命令创建一个Podfile
 
 	pod init
-	
+
 Podfile的内容如下：	
 
 	# target的名字一般与你的项目名字相同
@@ -178,7 +181,7 @@ Podfile的内容如下：
 在cocoa代码中，插入一下代码
 
     NSURL *jsCodeLocation;
-
+    
     jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
     
     RCTRootView *rootView =
@@ -188,13 +191,13 @@ Podfile的内容如下：
                           launchOptions    : nil];
     
     self.view = rootView;
-    
+
 这里有几点需要注意：
 
 - ```jsCodeLocation``` 按照两种方式（JS源码、JSBundle），有两种方式创建，上面的代码中是JSBundle方式。如果使用源码方式替换为下面的代码：
 
 		 jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
-		 
+	
 - ```moduleName``` 应该是在```AppRegister```注册的类
 - ```RCTRootView``` 可以作为任意一个UIViewController的View使用，也可以添加到任意的View上。
 
@@ -205,21 +208,28 @@ Podfile的内容如下：
 #### 2.7.1 开放接口类给JS
 
 1. 定义一个类```ToolsManager```，确认协议```RCTBridgeModule```
+
 2. 实现 ```RCT_EXPORT_MODULE();``` 开放一个类给JS。
+
 3. 定义方法 showTab:(BOOL)isshow 开放给js调用
 
-		//ToolsManager.m
-		RCT_EXPORT_METHOD(showTab:(BOOL)isshow)
-		{
-		    NSLog(@"show tabbar %d",isshow);
-		}
+   //ToolsManager.m
+   	RCT_EXPORT_METHOD(showTab:(BOOL)isshow)
+   	{
+   	    NSLog(@"show tabbar %d",isshow);
+   	}
 
 4. js调用方式 
 
-		//index.ios.js
-		import { NativeModules } from 'react-native';
-		var ToolsManager = NativeModules.ToolsManager;
-		ToolsManager.showTab(true);
+   //index.ios.js
+
+   ```javascript
+   import { NativeModules } from 'react-native';
+   var ToolsManager = NativeModules.ToolsManager;
+   ToolsManager.showTab(true);
+   ```
+
+   ​	
 
 
 #### 2.7.2 原生调用JS
@@ -233,15 +243,18 @@ Podfile的内容如下：
 
 4. JS处理事件
 
-		import { NativeAppEventEmitter } from 'react-native';
-		
-		var subscription = NativeAppEventEmitter.addListener(
-		  'EventReminder',
-		  (reminder) => console.log(reminder.name)
-		);
-		...
-		// 千万不要忘记忘记取消订阅, 通常在componentWillUnmount函数中实现。
-		subscription.remove();
-		
-		
+   import { NativeAppEventEmitter } from 'react-native';
+   	
+   ```javascript
+   var subscription = NativeAppEventEmitter.addListener(
+     'EventReminder',
+     (reminder) => console.log(reminder.name)
+   );
+   ...
+   // 千万不要忘记忘记取消订阅, 通常在componentWillUnmount函数中实现。
+   subscription.remove();
+   ```
+
+
+   ​	
 [参考ReactNative中文网](http://reactnative.cn/)
