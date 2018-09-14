@@ -7,7 +7,6 @@ author:     "Wxk"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
 
-    - React-Native
 ---
 
 
