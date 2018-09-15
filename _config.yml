@@ -1,7 +1,7 @@
 # Site settings
 title: Wxk Blog
 SEOTitle: 王鑫楷的博客 | wang Blog
-header-img: img/home-bg-my.jpg
+header-img: img/bath.jpg
 email: luxuntec@163.com
 description: "从新的起点出发，保持谦卑的心"
 keyword: "王鑫凯,王鑫楷,隔壁老王,王老师,美,技术博客"
@@ -61,8 +61,8 @@ ga_domain: zippowxk.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "无愧自己"
-sidebar-avatar: /img/avatar-wxk.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Comparison is the thief of joy"
+sidebar-avatar: /img/zippo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
